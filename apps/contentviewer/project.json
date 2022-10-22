@@ -1,0 +1,84 @@
+{
+  "name": "contentviewer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/contentviewer/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/contentviewer",
+        "index": "apps/contentviewer/src/index.html",
+        "baseHref": "/",
+        "main": "apps/contentviewer/src/main.tsx",
+        "polyfills": "apps/contentviewer/src/polyfills.ts",
+        "tsConfig": "apps/contentviewer/tsconfig.app.json",
+        "assets": [
+          "apps/contentviewer/src/favicon.ico",
+          "apps/contentviewer/src/assets"
+        ],
+        "styles": ["apps/contentviewer/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/contentviewer/src/environments/environment.ts",
+              "with": "apps/contentviewer/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "contentviewer:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "contentviewer:build:development"
+        },
+        "production": {
+          "buildTarget": "contentviewer:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/contentviewer/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/contentviewer/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:contentviewer"]
+}
