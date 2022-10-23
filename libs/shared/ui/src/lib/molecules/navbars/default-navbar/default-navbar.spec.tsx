@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import SharedUi from './shared-ui';
+import DefaultNavbar from './default-navbar';
 
-describe('SharedUi', () => {
+describe('DefaultNavbar', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<SharedUi />);
+    const { baseElement } = render(<DefaultNavbar />);
     expect(baseElement).toBeTruthy();
   });
 });
