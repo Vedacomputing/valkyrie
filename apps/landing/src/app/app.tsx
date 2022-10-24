@@ -1,12 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.css';
-import NxWelcome from './nx-welcome';
+import { DefaultHeader, DefaultFooter, DefaultHero, DefaultFeature, DefaultAbout } from '@valkyrie/shared/ui';
 
 export function App() {
   return (
     <>
-      <NxWelcome title="landing" />
-      <div />
+      <DefaultHeader />
+      <DefaultHero />
+      <DefaultFeature />
+      <DefaultAbout />
+      <DefaultFooter />
     </>
   );
 }
