@@ -37,9 +37,9 @@ jobs:
       - run:
           name: Run workspace lint
           command: yarn exec nx-cloud record -- yarn exec nx workspace-lint
-      - run:
-          name: Check format
-          command: yarn exec nx-cloud record -- yarn exec nx format:check --base=$NX_BASE --head=$NX_HEAD
+      # - run:
+      #     name: Check format
+      #     command: yarn exec nx-cloud record -- yarn exec nx format:check --base=$NX_BASE --head=$NX_HEAD
       - run:
           name: Run lint
           command: yarn exec nx affected --base=$NX_BASE --head=$NX_HEAD --target=lint --parallel=3
