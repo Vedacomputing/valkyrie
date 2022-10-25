@@ -1,9 +1,4 @@
-import styles from './default-hero.module.css';
-
-/* eslint-disable-next-line */
-export interface DefaultHeroProps {}
-
-export function DefaultHero(props: DefaultHeroProps) {
+export function DefaultHero() {
   return (
     <section className="pt-24 bg-white">
     <div className="px-12 mx-auto max-w-7xl">
