@@ -50,6 +50,9 @@ jobs:
           name: Run build
           command: yarn exec nx affected --base=$NX_BASE --head=$NX_HEAD --target=build --parallel=3
       - run:
+          name: Run deploy hosting
+          command: yarn exec nx affected --base=$NX_BASE --head=$NX_HEAD --target=deploy:hosting --parallel=3
+      - run:
           name: Stop all agents
           command: yarn exec nx-cloud stop-all-agents
           when: always

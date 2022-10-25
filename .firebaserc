@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "project-valkyrie-40e09"
-  }
+  },
+  "targets": {
+    "project-valkyrie-40e09": {
+      "hosting": {
+        "landing": [
+          "valkyrie-landing"
+        ],
+        "dashboard": [
+          "valkyrie-dashboard"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

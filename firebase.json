@@ -19,8 +19,9 @@
       ]
     }
   ],
-  "hosting": {
-    "public": "dist",
+  "hosting": [{
+    "target": "landing",
+    "public": "dist/apps/landing",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -32,7 +33,22 @@
         "destination": "/index.html"
       }
     ]
-  },
+  },{
+    "target": "dashboard",
+    "public": "dist/apps/dashboard",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+],
   "storage": {
     "rules": "storage.rules"
   }
