@@ -47,6 +47,20 @@
         "destination": "/index.html"
       }
     ]
+  },{
+    "target": "storybook",
+    "public": "dist/storybook/shared-ui",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 ],
   "storage": {
